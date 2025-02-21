@@ -22,7 +22,7 @@ const Users: FC = () => {
         }
     }, [data, dispatch]);
 
-    const itemsPerPage = 4;
+    const itemsPerPage = 5;
 
     const {
         currentPage,
@@ -75,7 +75,7 @@ const Users: FC = () => {
                             duration: 0.2,
                             ease: [0.43, 0.13, 0.23, 0.96],
                         }}
-                        className="w-[90%] flex flex-wrap gap-5 mx-auto mb-10"
+                        className="w-[90%] flex gap-5 mx-auto mb-10"
                     >
                         {renderContent()}
                     </motion.div>
