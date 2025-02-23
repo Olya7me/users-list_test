@@ -34,7 +34,7 @@ const BreadcrumbComponent: FC = () => {
                 <BreadcrumbSeparator />
                 <BreadcrumbItem>
                     <BreadcrumbLink asChild isActive={pathname === "/users"}>
-                        <Link href="/users">Пользователи</Link>
+                        <Link href="/users">Все пользователи</Link>
                     </BreadcrumbLink>
                 </BreadcrumbItem>
                 {isUserPage && user && (
