@@ -2,11 +2,13 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { contactType } from "@/types/users.types";
 
 interface UserState {
-    users: (contactType & { liked: boolean })[]; // Добавили поле liked
+    users: (contactType & { liked: boolean })[];
+    showOnlyFavorites: boolean;
 }
 
 const initialState: UserState = {
     users: [],
+    showOnlyFavorites: false,
 };
 
 const userSlice = createSlice({
@@ -17,7 +19,7 @@ const userSlice = createSlice({
             state.users = action.payload.map((user) => ({
                 ...user,
                 liked: false,
-            })); // Добавляем liked: false
+            }));
         },
         deleteUser: (state, action: PayloadAction<number>) => {
             state.users = state.users.filter(
@@ -27,11 +29,15 @@ const userSlice = createSlice({
         toggleLike: (state, action: PayloadAction<number>) => {
             const user = state.users.find((user) => user.id === action.payload);
             if (user) {
-                user.liked = !user.liked; // Переключаем лайк
+                user.liked = !user.liked;
             }
+        },
+        toggleFavoritesFilter(state) {
+            state.showOnlyFavorites = !state.showOnlyFavorites;
         },
     },
 });
 
-export const { setUsers, deleteUser, toggleLike } = userSlice.actions;
+export const { setUsers, deleteUser, toggleLike, toggleFavoritesFilter } =
+    userSlice.actions;
 export default userSlice.reducer;

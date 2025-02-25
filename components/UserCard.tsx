@@ -7,12 +7,12 @@ import {
     CardHeader,
     CardTitle,
 } from "@/components/ui/card";
-import { FC, useState } from "react";
+import { FC } from "react";
 import { contactType } from "@/types/users.types";
 import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteUser, toggleLike } from "@/store/slices/userSlice";
-import { RootState } from "@/store/store"; // Убедись, что у тебя есть RootState
+import { RootState } from "@/store/store";
 
 const UserCard: FC<{ user: contactType }> = ({ user }) => {
     const dispatch = useDispatch();
@@ -40,15 +40,16 @@ const UserCard: FC<{ user: contactType }> = ({ user }) => {
             </Button>
             <button
                 onClick={handleToggleLike}
-                className="absolute top-1 right-1 p-1 rounded-full text-gray-500 hover:text-red-500 transition-all duration-300"
+                className="absolute top-1 right-1 p-1 rounded-full transition-all duration-300"
             >
                 <i
                     className={`fas fa-heart text-2xl ${
                         liked ? "text-red-500" : "text-gray-400"
-                    }`}
+                    } transition-all duration-300 transform hover:scale-110`}
                     aria-hidden="true"
                 ></i>
             </button>
+
             <CardHeader>
                 <CardTitle className="text-center">{user.name}</CardTitle>
                 <CardDescription className="text-center mb-5">

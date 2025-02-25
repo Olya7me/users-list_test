@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { AnimatePresence, motion } from "framer-motion";
 
 import { useGetUsersQuery } from "@/store/users/user.api";
+import { RootState } from "@/store/store";
 import { setUsers } from "@/store/slices/userSlice";
 import { useHandleError } from "@/hooks/useHandleError";
 import { usePagination } from "@/hooks/usePagination";
@@ -10,7 +11,7 @@ import { usePagination } from "@/hooks/usePagination";
 import UserSkeleton from "@/components/UserSkeleton";
 import UserCard from "@/components/UserCard";
 import PaginationControl from "@/components/PaginationControl";
-import { RootState } from "@/store/store";
+import Favorites from "@/components/Favorites";
 
 const Users: FC = () => {
     const dispatch = useDispatch();
@@ -62,6 +63,7 @@ const Users: FC = () => {
 
     return (
         <section className="flex flex-col">
+            <Favorites />
             <div className="container mx-auto p-4">
                 <h1 className="text-center mb-20 text-4xl">
                     Список пользователей
