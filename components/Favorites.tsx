@@ -8,7 +8,7 @@ import {
 import { FC } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "@/store/store";
-import { toggleFavoritesFilter } from "@/store/slices/userSlice";
+import { toggleShowFavorites } from "@/store/slices/userSlice";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Favorites: FC = () => {
@@ -19,15 +19,9 @@ const Favorites: FC = () => {
             state.users.users.filter((user) => user.liked).length
     );
 
-    // Флаг, включена ли фильтрация
-    const isFilteringFavorites = useSelector(
+    const showOnlyFavorites = useSelector(
         (state: RootState) => state.users.showOnlyFavorites
     );
-
-    // Переключаем режим фильтрации избранного
-    const handleToggleFilter = () => {
-        dispatch(toggleFavoritesFilter());
-    };
 
     return (
         <TooltipProvider>
@@ -35,7 +29,7 @@ const Favorites: FC = () => {
                 <TooltipTrigger>
                     <Button
                         className="relative h-9 px-5 py-2"
-                        onClick={handleToggleFilter}
+                        onClick={() => dispatch(toggleShowFavorites())}
                     >
                         <i
                             className="fas fa-heart text-2xl text-white-500"
@@ -64,8 +58,8 @@ const Favorites: FC = () => {
                 </TooltipTrigger>
                 <TooltipContent>
                     <p>
-                        {isFilteringFavorites
-                            ? "Показать все"
+                        {showOnlyFavorites
+                            ? "Показать всех пользователей"
                             : "Показать избранное"}
                     </p>
                 </TooltipContent>
