@@ -18,4 +18,5 @@ export type contactType = {
     phone: string;
     website: string;
     address: addressType;
+    liked: boolean;
 };

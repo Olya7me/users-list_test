@@ -18,13 +18,18 @@ const BreadcrumbComponent: FC = () => {
     const { id } = query;
 
     const isUserPage = pathname.includes("/users/");
+    const isCreateUserPage = pathname === "/create-user";
 
     const user = useSelector((state: RootState) =>
         state.users.users.find((u) => u.id === Number(id))
     );
 
+    const showOnlyFavorites = useSelector(
+        (state: RootState) => state.users.showOnlyFavorites
+    );
+
     return (
-        <Breadcrumb className="mb-20 container mx-auto">
+        <Breadcrumb className="mb-14 container mx-auto">
             <BreadcrumbList>
                 <BreadcrumbItem>
                     <BreadcrumbLink asChild>
@@ -34,7 +39,11 @@ const BreadcrumbComponent: FC = () => {
                 <BreadcrumbSeparator />
                 <BreadcrumbItem>
                     <BreadcrumbLink asChild isActive={pathname === "/users"}>
-                        <Link href="/users">Все пользователи</Link>
+                        <Link href="/users">
+                            {showOnlyFavorites
+                                ? "Избранное"
+                                : "Все пользователи"}
+                        </Link>
                     </BreadcrumbLink>
                 </BreadcrumbItem>
                 {isUserPage && user && (
@@ -44,6 +53,18 @@ const BreadcrumbComponent: FC = () => {
                             <BreadcrumbPage>
                                 <span className="text-blue-500 hover:text-blue-700">
                                     {user.name}
+                                </span>
+                            </BreadcrumbPage>
+                        </BreadcrumbItem>
+                    </>
+                )}
+                {isCreateUserPage && (
+                    <>
+                        <BreadcrumbSeparator />
+                        <BreadcrumbItem>
+                            <BreadcrumbPage>
+                                <span className="text-blue-500 hover:text-blue-700">
+                                    Создать пользователя
                                 </span>
                             </BreadcrumbPage>
                         </BreadcrumbItem>

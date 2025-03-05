@@ -1,6 +1,7 @@
 import { FC, useEffect, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { AnimatePresence, motion } from "framer-motion";
+import Link from "next/link";
 
 import { useGetUsersQuery } from "@/store/users/user.api";
 import { RootState } from "@/store/store";
@@ -13,6 +14,7 @@ import UserSkeleton from "@/components/UserSkeleton";
 import UserCard from "@/components/UserCard";
 import PaginationControl from "@/components/PaginationControl";
 import Favorites from "@/components/Favorites";
+import AddNew from "@/components/AddNew";
 
 const Users: FC = () => {
     const dispatch = useDispatch();
@@ -76,9 +78,15 @@ const Users: FC = () => {
     };
 
     return (
-        <section className="flex flex-col">
-            <Favorites />
-            <div className="container mx-auto p-4">
+        <section className="flex flex-col container mx-auto">
+            <div className="flex gap-3 justify-end">
+                {" "}
+                <Link href="/create-user">
+                    <AddNew />
+                </Link>
+                <Favorites />
+            </div>
+            <div className=" p-4">
                 <h1 className="text-center mb-20 text-4xl">
                     {showOnlyFavorites ? "Избранное" : "Список пользователей"}
                 </h1>

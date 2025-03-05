@@ -32,10 +32,12 @@ const Favorites: FC = () => {
                         onClick={() => dispatch(toggleShowFavorites())}
                     >
                         <i
-                            className="fas fa-heart text-2xl text-white-500"
+                            className={`fas ${
+                                showOnlyFavorites ? "fa-users" : "fa-heart"
+                            } text-2xl text-white-500 transition-all duration-300`}
                             aria-hidden="true"
                         ></i>
-                        {favoriteCount > 0 && (
+                        {!showOnlyFavorites && favoriteCount > 0 && (
                             <div className="absolute -bottom-1 -right-1 bg-red-500 text-white text-xs font-bold px-2 py-0.5 rounded-full h-5 flex items-center justify-center overflow-hidden w-6">
                                 <AnimatePresence mode="popLayout">
                                     <motion.span

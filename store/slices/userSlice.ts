@@ -16,13 +16,14 @@ const userSlice = createSlice({
     initialState,
     reducers: {
         setUsers(state, action: PayloadAction<contactType[]>) {
-            state.users = action.payload.map((user) => {
-                const existingUser = state.users.find((u) => u.id === user.id);
-                return {
-                    ...user,
-                    liked: existingUser ? existingUser.liked : false,
-                };
-            });
+            const newUsers = action.payload.filter(
+                (user) => !state.users.some((u) => u.id === user.id)
+            );
+            state.users = [...state.users, ...newUsers].map((user) => ({
+                ...user,
+                liked:
+                    state.users.find((u) => u.id === user.id)?.liked ?? false,
+            }));
         },
         deleteUser: (state, action: PayloadAction<number>) => {
             state.users = state.users.filter(
@@ -38,9 +39,20 @@ const userSlice = createSlice({
         toggleShowFavorites: (state) => {
             state.showOnlyFavorites = !state.showOnlyFavorites;
         },
+        addUser(
+            state,
+            action: PayloadAction<contactType & { liked: boolean }>
+        ) {
+            state.users = [...state.users, action.payload];
+        },
     },
 });
 
-export const { setUsers, deleteUser, toggleLike, toggleShowFavorites } =
-    userSlice.actions;
+export const {
+    setUsers,
+    deleteUser,
+    toggleLike,
+    toggleShowFavorites,
+    addUser,
+} = userSlice.actions;
 export default userSlice.reducer;
