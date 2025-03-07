@@ -21,16 +21,18 @@ const UserCard: FC<{ user: contactType }> = ({ user }) => {
             state.users.users.find((u) => u.id === user.id)?.liked
     );
 
-    const handleToggleLike = () => {
+    const handleToggleLike = (e: React.MouseEvent) => {
+        e.stopPropagation();
         dispatch(toggleLike(user.id));
     };
 
-    const handleDelete = () => {
+    const handleDelete = (e: React.MouseEvent) => {
+        e.stopPropagation();
         dispatch(deleteUser(user.id));
     };
 
     return (
-        <Card className="relative w-[270px] h-[350px] flex flex-wrap flex-col p-2 justify-center group">
+        <Card className="relative w-[270px] h-[350px] flex flex-wrap flex-col p-2 justify-center items-center group">
             <Button
                 size="icon"
                 className="absolute top-1 left-1 rounded-full text-red-500 bg-transparent border-none text-lg font-extrabold hover:bg-gray-200 transition-opacity duration-200 opacity-0 group-hover:opacity-100"
@@ -50,25 +52,28 @@ const UserCard: FC<{ user: contactType }> = ({ user }) => {
                 ></i>
             </button>
 
-            <CardHeader>
-                <CardTitle className="text-center">{user.name}</CardTitle>
-                <CardDescription className="text-center mb-5">
-                    {user.username}
-                </CardDescription>
-            </CardHeader>
+            <Link
+                href={`/users/${user.id}`}
+                className="group flex flex-col h-full justify-center"
+            >
+                <CardHeader>
+                    <CardTitle className="text-center">{user.name}</CardTitle>
+                    <CardDescription className="text-center mb-5">
+                        {user.username}
+                    </CardDescription>
+                </CardHeader>
 
-            <CardContent>
-                <p>{user.company.name}</p>
-            </CardContent>
+                <CardContent>
+                    <p>{user.company.name}</p>
+                </CardContent>
 
-            <CardFooter className="text-center mb-2">
-                <p>{user.email}</p>
-            </CardFooter>
+                <CardContent>
+                    <p>{user.website}</p>
+                </CardContent>
 
-            <Link href={`/users/${user.id}`} className="flex">
-                <Button size="default" className="animate- self-center mx-auto">
-                    Смотреть
-                </Button>
+                <CardFooter className="text-center mb-2">
+                    <p>{user.email}</p>
+                </CardFooter>
             </Link>
         </Card>
     );
