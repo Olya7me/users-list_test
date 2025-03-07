@@ -103,8 +103,8 @@ const UserForm: FC = () => {
     };
 
     return (
-        <div className="max-w-lg mx-auto p-5 border rounded-lg shadow-lg">
-            <h2 className="text-2xl font-bold text-center mb-5">
+        <div className="max-w-lg mx-auto p-5 border rounded-lg shadow-lg md:max-w-sm">
+            <h2 className="text-2xl font-bold text-center mb-5 sm_xl:text-lg md:text-lg">
                 Создать пользователя
             </h2>
             <form onSubmit={handleSubmit} className="space-y-4">
@@ -128,7 +128,10 @@ const UserForm: FC = () => {
                     </div>
                 ))}
                 <div className="flex justify-center">
-                    <Button type="submit" className="w-40 font-bold text-lg">
+                    <Button
+                        type="submit"
+                        className="w-40 font-bold text-lg md:w-30 md:text-sm sm_xl:text-sm sm_xl:w-25 sm_xl:h-8"
+                    >
                         Создать
                     </Button>
                 </div>

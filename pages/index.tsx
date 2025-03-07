@@ -23,17 +23,19 @@ const Home: FC = () => {
     }, []);
 
     return (
-        <main className="flex flex-col min-h-screen">
+        <main className="flex flex-col min-h-screen p-10">
             <div className="my-auto">
                 <div className="text-center w-full flex justify-center items-center flex-col flex-1 container-xl mx-auto h-[400px]">
-                    <h1 className="text-center mb-20 text-4xl font-bold tracking-wide uppercase slide-in-effect">
-                        <span className="custom-logo">Users-list</span> -
-                        Приложение для просмотра пользователей
+                    <h1 className="text-center mb-20 md:mb-10 sm_xl:mb-10 text-4xl font-bold lg:text-3xl md:text-2xl sm_xl:text-xl tracking-wide uppercase slide-in-effect">
+                        <span className="custom-logo lg:text-3xl md:text-2xl sm_xl:text-xl">
+                            Users-list
+                        </span>{" "}
+                        - Приложение для просмотра пользователей
                     </h1>
                     <Link href="/users">
                         <Button
                             size="lg"
-                            className="slide-in-button uppercase tracking-[2px] text-xl text-bold"
+                            className="slide-in-button uppercase tracking-[2px] text-xl text-bold md:h-9 md:px-10 md:text-xl sm_xl:h-9 sm_xl:px-9 sm_xl:text-sm"
                         >
                             <span className="text">Начать</span>
                             <span className="arrow">❯</span>
@@ -41,7 +43,7 @@ const Home: FC = () => {
                     </Link>
                 </div>
                 <p
-                    className={`w-1/2 text-xl mx-auto transition-all duration-500 ease-in-out transform ${
+                    className={`w-1/2 text-xl mx-auto transition-all duration-500 ease-in-out transform md:text-xs sm_xl:text-xs ${
                         isVisible
                             ? "opacity-100 translate-y-0"
                             : "opacity-0 translate-y-10"

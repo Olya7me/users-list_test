@@ -32,7 +32,7 @@ const UserCard: FC<{ user: contactType }> = ({ user }) => {
     };
 
     return (
-        <Card className="relative w-[270px] h-[350px] flex flex-wrap flex-col p-2 justify-center items-center group">
+        <Card className="relative w-[270px] h-[350px] md:w-[230px] md:h-[310px] sm_xl:w-[210px] sm_xl:h-[290px] flex flex-wrap flex-col p-2 justify-center items-center group">
             <Button
                 size="icon"
                 className="absolute top-1 left-1 rounded-full text-red-500 bg-transparent border-none text-lg font-extrabold hover:bg-gray-200 transition-opacity duration-200 opacity-0 group-hover:opacity-100"

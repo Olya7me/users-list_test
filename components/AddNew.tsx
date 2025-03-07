@@ -19,9 +19,9 @@ const AddNew: FC = () => {
             <TooltipProvider>
                 <Tooltip>
                     <TooltipTrigger>
-                        <Button className="relative h-9 px-5 py-2">
+                        <Button className="relative h-9 px-5 py-2 md:h-7 md:px-3 sm_xl:h-7 sm_xl:px-3">
                             <i
-                                className="fas fa-plus text-2xl text-white-500"
+                                className="fas fa-plus text-2xl md:text-xl sm_xl:text-xl text-white-500"
                                 aria-hidden="true"
                             ></i>
                         </Button>

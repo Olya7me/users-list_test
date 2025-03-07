@@ -79,7 +79,7 @@ const Users: FC = () => {
 
     return (
         <section className="flex flex-col container mx-auto">
-            <div className="flex gap-3 justify-end">
+            <div className="flex gap-3 justify-end p-5">
                 {" "}
                 <Link href="/create-user">
                     <AddNew />
@@ -87,7 +87,7 @@ const Users: FC = () => {
                 <Favorites />
             </div>
             <div className=" p-4">
-                <h1 className="text-center mb-20 text-4xl">
+                <h1 className="text-center mb-20 text-4xl md:text-2xl sm_xl:text-xl">
                     {showOnlyFavorites ? "Избранное" : "Список пользователей"}
                 </h1>
                 <AnimatePresence mode="wait">

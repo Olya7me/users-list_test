@@ -29,15 +29,15 @@ const BreadcrumbComponent: FC = () => {
     );
 
     return (
-        <Breadcrumb className="mb-14 container mx-auto">
+        <Breadcrumb className="mb-14 container mx-auto md:p-5 sm_xl:p-3 sm_xl:text-lg">
             <BreadcrumbList>
-                <BreadcrumbItem>
+                <BreadcrumbItem className="sm_xl:text-sm md:text-sm">
                     <BreadcrumbLink asChild>
                         <Link href="/">Главная</Link>
                     </BreadcrumbLink>
                 </BreadcrumbItem>
                 <BreadcrumbSeparator />
-                <BreadcrumbItem>
+                <BreadcrumbItem className="sm_xl:text-sm md:text-sm">
                     <BreadcrumbLink asChild isActive={pathname === "/users"}>
                         <Link href="/users">
                             {showOnlyFavorites
@@ -49,7 +49,7 @@ const BreadcrumbComponent: FC = () => {
                 {isUserPage && user && (
                     <>
                         <BreadcrumbSeparator />
-                        <BreadcrumbItem>
+                        <BreadcrumbItem className="sm_xl:text-sm md:text-sm">
                             <BreadcrumbPage>
                                 <span className="text-blue-500 hover:text-blue-700">
                                     {user.name}
@@ -61,7 +61,7 @@ const BreadcrumbComponent: FC = () => {
                 {isCreateUserPage && (
                     <>
                         <BreadcrumbSeparator />
-                        <BreadcrumbItem>
+                        <BreadcrumbItem className="sm_xl:text-sm md:text-sm">
                             <BreadcrumbPage>
                                 <span className="text-blue-500 hover:text-blue-700">
                                     Создать пользователя

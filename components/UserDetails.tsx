@@ -16,9 +16,11 @@ import {
 import { contactType } from "@/types/users.types";
 
 export const UserDetails: FC<{ user: contactType }> = ({ user }) => (
-    <Card className="w-1/2 flex flex-col p-2 justify-center mx-auto mb-20">
+    <Card className="max-w-lg flex flex-col p-2 justify-center mx-auto ">
         <CardHeader>
-            <CardTitle className="text-center text-3xl">{user.name}</CardTitle>
+            <CardTitle className="text-center text-3xl md:text-xl sm_xl:text-xl">
+                {user.name}
+            </CardTitle>
             <CardDescription className="text-center mb-5 text-lg">
                 {user.username}
             </CardDescription>

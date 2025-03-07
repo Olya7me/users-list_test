@@ -2,7 +2,7 @@ import { FC } from "react";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 export const DetailsSkeleton: FC = () => (
-    <Card className="w-1/2 h-[300px] flex flex-col p-2 mx-auto mb-20">
+    <Card className="max-w-lg h-[300px] flex flex-col p-2 mx-auto mb-20">
         <CardHeader>
             <Skeleton className="w-[100px] h-[20px] rounded-full mx-auto" />
             <Skeleton className="w-[150px] h-[15px] text-center mb-5 mx-auto" />

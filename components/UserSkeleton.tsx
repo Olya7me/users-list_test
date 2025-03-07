@@ -8,7 +8,7 @@ import {
 import { FC } from "react";
 
 const UserSkeleton: FC = () => (
-    <Card className=" w-[270px] h-[350px] flex flex-wrap flex-col p-2 justify-center items-center ">
+    <Card className=" w-[270px] h-[350px] md:w-[230px] md:h-[310px] sm_xl:w-[210px] sm_xl:h-[290px] flex flex-wrap flex-col p-2 justify-center items-center ">
         <div className="flex flex-col h-full justify-center">
             <CardHeader>
                 <Skeleton className="w-[150px] h-[20px] rounded-full mx-auto" />

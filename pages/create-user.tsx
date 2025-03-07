@@ -2,7 +2,7 @@ import UserForm from "@/components/UserForm";
 
 const CreateUserPage = () => {
     return (
-        <section className="container mx-auto">
+        <section className="container mx-auto p-5">
             <UserForm />
         </section>
     );
