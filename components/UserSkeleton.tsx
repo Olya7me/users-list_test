@@ -14,13 +14,11 @@ const UserSkeleton: FC = () => (
                 <Skeleton className="w-[150px] h-[20px] rounded-full mx-auto" />
                 <Skeleton className="w-[100px] h-[15px] rounded mx-auto mb-5" />
             </CardHeader>
-            <CardContent>
-                <Skeleton className="w-[200px] h-[15px] rounded mb-6" />
-                <Skeleton className="w-[180px] h-[15px] rounded mb-2" />
+            <CardContent className="flex flex-col gap-5 ">
+                <Skeleton className="w-[200px] h-[15px] rounded" />
+                <Skeleton className="w-[180px] h-[15px] rounded" />
+                <Skeleton className="w-[200px] h-[15px] rounded" />
             </CardContent>
-            <CardFooter>
-                <Skeleton className="w-[200px] h-[15px] rounded mx-auto mb-2" />
-            </CardFooter>
         </div>
     </Card>
 );

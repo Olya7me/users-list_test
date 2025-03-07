@@ -36,7 +36,7 @@ const Error: FC = () => {
             </p>
             <Image
                 className="mx-auto animate-slow-spin"
-                src="/error.png"
+                src="/users-list_test/error.png"
                 alt="Ошибка"
                 width={350}
                 height={350}

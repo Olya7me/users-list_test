@@ -32,7 +32,7 @@ const UserCard: FC<{ user: contactType }> = ({ user }) => {
     };
 
     return (
-        <Card className="relative w-[270px] h-[350px] md:w-[230px] md:h-[310px] sm_xl:w-[210px] sm_xl:h-[290px] flex flex-wrap flex-col p-2 justify-center items-center group">
+        <Card className="relative p-2 w-[270px] h-[350px] md:max-w-[230px] md:h-[310px] sm_xl:w-[210px] sm_xl:h-[290px] flex flex-col p-2 justify-between items-center group overflow-hidden">
             <Button
                 size="icon"
                 className="absolute top-1 left-1 rounded-full text-red-500 bg-transparent border-none text-lg font-extrabold hover:bg-gray-200 transition-opacity duration-200 opacity-0 group-hover:opacity-100"
@@ -54,26 +54,28 @@ const UserCard: FC<{ user: contactType }> = ({ user }) => {
 
             <Link
                 href={`/users/${user.id}`}
-                className="group flex flex-col h-full justify-center"
+                className="group flex flex-col h-full justify-between"
             >
-                <CardHeader>
-                    <CardTitle className="text-center">{user.name}</CardTitle>
-                    <CardDescription className="text-center mb-5">
+                <CardHeader className="flex-grow pt-20">
+                    <CardTitle className="text-center text-ellipsis overflow-hidden">
+                        {user.name}
+                    </CardTitle>
+                    <CardDescription className="text-center mb-2 text-ellipsis overflow-hidden">
                         {user.username}
                     </CardDescription>
                 </CardHeader>
 
-                <CardContent>
-                    <p>{user.company.name}</p>
+                <CardContent className="flex flex-col flex-grow gap-5 md:text-xs sm_xl:text-xs">
+                    <p className="text-ellipsis overflow-hidden">
+                        {user.company.name}
+                    </p>
+                    <p className="text-ellipsis overflow-hidden">
+                        {user.website}
+                    </p>
+                    <p className="text-ellipsis overflow-hidden">
+                        {user.email}
+                    </p>
                 </CardContent>
-
-                <CardContent>
-                    <p>{user.website}</p>
-                </CardContent>
-
-                <CardFooter className="text-center mb-2">
-                    <p>{user.email}</p>
-                </CardFooter>
             </Link>
         </Card>
     );
