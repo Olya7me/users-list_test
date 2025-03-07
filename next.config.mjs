@@ -4,8 +4,8 @@ const nextConfig = {
   images: {
     unoptimized: false,
   },
-  basePath: '/users-list_test',
-  assetPrefix: '/users-list_test',
+  basePath: '/users-list_test/',
+  assetPrefix: '/users-list_test/',
   reactStrictMode: true,
 };
 
