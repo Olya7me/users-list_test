@@ -28,7 +28,7 @@
 1. Клонируйте репозиторий:
 
    ```bash
-   https://github.com/Olya7me/wonder_learn-app.git
+   git clone https://github.com/Olya7me/users-list_test.git
 
    
 2. Установите зависимости:
