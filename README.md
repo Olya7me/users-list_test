@@ -1,40 +1,45 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# Users List
 
-## Getting Started
+Приложение на **Next.js** для просмотра списка пользователей с возможностью добавлять карточки в избранное, удалять их и добавлять новые
 
-First, run the development server:
+## 🚀 Функционал
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Загрузка списка пользователей с API `jsonplaceholder.typicode.com`
+- Просмотр детальной информации о пользователе
+- Добавление в "избранное" (лайк)
+- Удаление пользователя из списка
+- Добавление нового пользователя
+- Адаптивный дизайн с использованием **Tailwind CSS**
+- Использование **Redux Toolkit** для управления состоянием
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Используемые технологии
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+- **Next.js** – серверный рендеринг и маршрутизация
+- **TypeScript** – строгая типизация
+- **Tailwind CSS** – стилизация
+- **Shadcn UI** – готовые UI-компоненты
+- **Redux Toolkit** – управление состоянием
+- **jsonplaceholder.typicode.com** – моковый API для данных
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## 📦 Установка и запуск
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+Чтобы запустить приложение локально, выполните следующие шаги:
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Клонируйте репозиторий:
 
-## Learn More
+   ```bash
+   https://github.com/Olya7me/wonder_learn-app.git
 
-To learn more about Next.js, take a look at the following resources:
+   
+2. Установите зависимости:
+   ```bash
+   npm install
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+3. Запустите локальный сервер:
+   ```bash
+   npm start
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+## 🤝 Контакты
+- 📧 Email: gumnukolga@gmail.com
+- 🌐 Профиль на GitHub: https://github.com/Olya7me
